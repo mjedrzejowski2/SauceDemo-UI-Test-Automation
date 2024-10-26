@@ -2,9 +2,9 @@ import pytest
 from selenium import webdriver
 
 @pytest.fixture(scope="function")
-def browser():
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-
-    yield driver
-    driver.quit()
+def driver():
+    web_driver = webdriver.Chrome()
+    web_driver.maximize_window()
+    web_driver.delete_all_cookies()
+    yield web_driver
+    web_driver.quit()
