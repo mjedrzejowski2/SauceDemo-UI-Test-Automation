@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from pages.Page import Page
+from Page import Page
 
 class LoginPage(Page):
 
@@ -26,8 +26,3 @@ class LoginPage(Page):
             return self.driver.find_element(*self.ERROR_INFO).text
         
         return None
-
-if __name__ == '__main__':
-    x = LoginPage(webdriver.Chrome())
-    x.login("standard_user", "secret_sauce")
-    x.get_error_communicate()

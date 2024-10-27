@@ -1,5 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 class Page:
     def __init__(self, driver):
@@ -8,7 +9,8 @@ class Page:
 
     def load_site(self):
         self.driver.get(self.URL)
-    
+        time.sleep(2)
+        
     def click_element(self, selector, wait_time=5):
         element = WebDriverWait(self.driver, wait_time).until(EC.element_to_be_clickable(selector))
         element.click()
