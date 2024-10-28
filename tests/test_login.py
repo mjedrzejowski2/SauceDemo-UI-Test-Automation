@@ -35,7 +35,6 @@ def test_login_locked_out_user(driver):
 @pytest.mark.no_username
 def test_login_no_username(driver):
     login_page = LoginPage(driver)
-    login_page.load_site()
     login_page.login("", "secret_sauce")
     expected_error = "Epic sadface: Username is required"
 
@@ -46,7 +45,6 @@ def test_login_no_username(driver):
 @pytest.mark.no_password
 def test_login_no_username(driver):
     login_page = LoginPage(driver)
-    login_page.load_site()
     login_page.login("random_string", "")
     expected_error = "Epic sadface: Password is required"
 
@@ -59,7 +57,6 @@ def test_login_no_username(driver):
 @pytest.mark.bad_credentials
 def test_login_no_username(driver, username, password):
     login_page = LoginPage(driver)
-    login_page.load_site()
     login_page.login(username, password)
     expected_error = "Epic sadface: Username and password do not match any user in this service"
 

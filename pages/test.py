@@ -15,13 +15,28 @@ if __name__ == '__main__':
         # Przechodzimy na stronę InventoryPage, przekazując driver
         inventory_page = InventoryPage(driver)
         # results = inventory_page.get_all_products_prices()
+        # print(results)  
+        #       
         # names = inventory_page.get_all_product_names()
+        # print(names)  
+        #       
         # items = inventory_page.get_all_inventory_items()
-        # inventory_page.add_all_products_to_cart()
-        inventory_page.click_sort_button()
-        # print(results)
-        # print(names)
         # print(items)
+
+        # inventory_page.add_all_products_to_cart()
+        # inventory_page.choose_sort_name_za()
+        # time.sleep(2) 
+
+        # inventory_page.choose_sort_price_high_low()
+        # time.sleep(2) 
+
+        # inventory_page.choose_sort_price_low_high()
+        # time.sleep(2)
+
+        # inventory_page.choose_sort_name_az()
+        # time.sleep(2)      
+          
+
     finally:
         # Zamknięcie przeglądarki
         driver.quit()
