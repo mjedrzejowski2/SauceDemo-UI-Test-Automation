@@ -15,6 +15,8 @@ class InventoryPage(Page):
         self.products_names = (By.XPATH, "//*[@class='inventory_item_label']/a")
         self.inventory_item_selector = (By.XPATH, "//*[@class='inventory_item']")
         self.sort_button = (By.XPATH, "//*[@class='product_sort_container']")
+        self.cart_button = (By.CLASS_NAME, "shopping_cart_link")
+        self.menu_button = (By.ID, "react-burger-menu-btn")
 
     #GET 
     def get_all_products_prices(self):
@@ -43,10 +45,10 @@ class InventoryPage(Page):
     #ACTION
 
     def click_cart(self):
-        pass
+        self.click_element(self.cart_button)
 
     def click_menu(self):
-        pass
+        self.click_element(self.menu_button)
 
     def add_all_products_to_cart(self):
         items = self.get_all_inventory_items()

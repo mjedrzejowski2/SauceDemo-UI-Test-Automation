@@ -1,6 +1,7 @@
 from selenium import webdriver
 from login_page import LoginPage
 from inventory_page import InventoryPage
+from cart_page import CartPage
 import time
 
 if __name__ == '__main__':
@@ -14,6 +15,7 @@ if __name__ == '__main__':
 
         # Przechodzimy na stronę InventoryPage, przekazując driver
         inventory_page = InventoryPage(driver)
+        cart_page = CartPage(driver)
         # results = inventory_page.get_all_products_prices()
         # print(results)  
         #       
@@ -34,7 +36,12 @@ if __name__ == '__main__':
         # time.sleep(2)
 
         # inventory_page.choose_sort_name_az()
-        # time.sleep(2)      
+        # time.sleep(2)
+        inventory_page.add_all_products_to_cart()
+        inventory_page.click_cart()
+        time.sleep(2)
+        print(cart_page.get_sum_prices())
+
           
 
     finally:

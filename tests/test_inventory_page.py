@@ -20,6 +20,7 @@ def test_add_all_to_cart(driver):
             ), f"Expected 0 products in cart, got {inventory_page.get_number_in_cart()}."  
     
 @pytest.mark.inventory_page
+@pytest.mark.sort
 def test_sort_az(driver):
     login_page = LoginPage(driver)
     login_page.login("standard_user", "secret_sauce")
@@ -36,6 +37,7 @@ def test_sort_az(driver):
 
 
 @pytest.mark.inventory_page
+@pytest.mark.sort
 def test_sort_za(driver):
     login_page = LoginPage(driver)
     login_page.login("standard_user", "secret_sauce")
@@ -51,6 +53,7 @@ def test_sort_za(driver):
         ), f"Product {product_names[x]} is not sorted correctly, expected {sorted_product_names[x]}"
 
 @pytest.mark.inventory_page
+@pytest.mark.sort
 def test_sort_price_high_low(driver):
     login_page = LoginPage(driver)
     login_page.login("standard_user", "secret_sauce")
@@ -65,6 +68,7 @@ def test_sort_price_high_low(driver):
         ), f"Product price {product_prices[x]} is lower than {product_prices[x+1]}"
 
 @pytest.mark.inventory_page
+@pytest.mark.sort
 def test_sort_price_low_high(driver):
     login_page = LoginPage(driver)
     login_page.login("standard_user", "secret_sauce")
