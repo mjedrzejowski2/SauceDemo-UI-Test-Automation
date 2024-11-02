@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.wait import WebDriverWait 
 from selenium.webdriver.support import expected_conditions as EC
-from pages.Page import Page
+from Page import Page
 import time
 
 class InventoryPage(Page):

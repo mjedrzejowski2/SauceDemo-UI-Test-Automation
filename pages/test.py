@@ -2,6 +2,7 @@ from selenium import webdriver
 from login_page import LoginPage
 from inventory_page import InventoryPage
 from cart_page import CartPage
+from checkout_page import CheckoutPage
 import time
 
 if __name__ == '__main__':
@@ -37,11 +38,17 @@ if __name__ == '__main__':
 
         # inventory_page.choose_sort_name_az()
         # time.sleep(2)
-        inventory_page.add_all_products_to_cart()
         inventory_page.click_cart()
-        time.sleep(2)
-        print(cart_page.get_sum_prices())
 
+        cart_page.click_checkout()
+
+        checkout_page = CheckoutPage(driver)
+        checkout_page.first_name()
+        time.sleep(2)
+        checkout_page.click_continue_button()
+        time.sleep(2)
+        print(checkout_page.error_exists())
+        print(checkout_page.get_error_communicate())
           
 
     finally:
