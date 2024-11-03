@@ -1,0 +1,1 @@
+his project showcases automated testing for the SauceDemo e-commerce application, developed to validate key user flows and ensure application reliability across various platforms. Using Python and Selenium, the tests cover essential functionalities, including product selection, cart management, and the checkout process.
