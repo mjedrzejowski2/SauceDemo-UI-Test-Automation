@@ -41,14 +41,15 @@ if __name__ == '__main__':
         inventory_page.click_cart()
 
         cart_page.click_checkout()
+        print(cart_page.get_subheader())
 
-        checkout_page = CheckoutPage(driver)
-        checkout_page.first_name()
-        time.sleep(2)
-        checkout_page.click_continue_button()
-        time.sleep(2)
-        print(checkout_page.error_exists())
-        print(checkout_page.get_error_communicate())
+        # checkout_page = CheckoutPage(driver)
+        # checkout_page.first_name()
+        # time.sleep(2)
+        # checkout_page.click_continue_button()
+        # time.sleep(2)
+        # print(checkout_page.error_exists())
+        # print(checkout_page.get_error_communicate())
           
 
     finally:
